@@ -1,13 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 
-import { Button } from 'components/Button';
+import { setLoadingPage as acSetLoadingPage } from 'store/app/actions';
 
-function App() {
+import { Home } from 'pages/Home';
+import { BaseLoader } from 'components/BaseLoader';
+
+function App({ isLoadingPage, setLoadingPage }) {
+  useEffect(() => {
+    setTimeout(() => setLoadingPage(false), 2000);
+  }, []);
   return (
     <div className="App">
-      <Button />
+      <BaseLoader isShow={isLoadingPage} />
+			<Home isShow={!isLoadingPage}/>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = state => ({ isLoadingPage: state.app.isLoadingPage });
+
+const mapDispatchToProps = dispatch => ({
+  setLoadingPage: value => dispatch(acSetLoadingPage(value))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

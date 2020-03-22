@@ -1,0 +1,14 @@
+// reset css
+@import '../../node_modules/reset-css/reset.css';
+
+// fonts 
+@import './fonts.scss';
+
+// variables 
+@import './variables.scss';
+
+body {
+	font-family: 'Raleway', sans-serif;
+
+	background-color: $color-d;
+}
