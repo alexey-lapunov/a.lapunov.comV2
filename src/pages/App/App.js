@@ -6,12 +6,15 @@ import { setLoadingPage as acSetLoadingPage } from 'store/app/actions';
 import { Home } from 'pages/Home';
 import { BaseLoader } from 'components/BaseLoader';
 
-function App({ isLoadingPage, setLoadingPage }) {
+import styles from './App.module.scss';
+
+const App = ({ isLoadingPage, setLoadingPage }) => {
   useEffect(() => {
     setTimeout(() => setLoadingPage(false), 2000);
-  }, []);
+	});
+	
   return (
-    <div className="App">
+    <div className={styles.block}>
       <BaseLoader isShow={isLoadingPage} />
 			<Home isShow={!isLoadingPage}/>
     </div>
