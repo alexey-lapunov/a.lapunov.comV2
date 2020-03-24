@@ -38,10 +38,15 @@
 
 .right-penel {
 	position: relative;
+
 	width: 40%;
 
+	background-color: $color-w;
+	overflow: hidden;
+	
 	.bg {
-		background-color: $color-w;
+		background-color: $color-d;
+		z-index: 0;
 	}
 }
 
@@ -57,21 +62,15 @@
 
 .title {
 	position: relative;
+	display: inline-block;
 
 	font-family: 'Titillium Web', sans-serif;
 	font-size: 40px;
 	font-weight: 400;
 
 	text-transform: uppercase;
-	overflow: hidden;
 
-	&-text {
-		display: inline-block;
-	}
-
-	&:before {
-		content: '';
-
+	&-line {
 		position: absolute;
 		top: 50%;
 		left: -60px;
@@ -81,6 +80,8 @@
 		margin: -25px 0 0 0;
 
 		background-color: $color-d;
+
+		transform-origin: top center;
 	}
 }
 
@@ -94,9 +95,7 @@
 
 	margin: 40px 0 0 0;
 
-	&:before {
-		content: '';
-
+	&-square {
 		display: block;
 
 		width: 5px;
@@ -108,7 +107,13 @@
 }
 
 .info {
+	font-size: 24px;
 	line-height: 1.4em;
+
+	text-decoration: none;
+	text-transform: uppercase;
+	color: $color-d;
+
 	&:not(:first-of-type) {
 		margin: 20px 0 0 0;
 	}
@@ -119,7 +124,7 @@
 }
 
 .link {
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	right: 0;
 

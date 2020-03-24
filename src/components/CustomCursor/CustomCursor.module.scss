@@ -1,0 +1,45 @@
+.wrapper {
+	position: fixed;
+	top: -50px;
+	left: -50px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 100px;
+	height: 100px;
+
+	z-index: 99999;
+
+	pointer-events: none;
+}
+
+.cursor {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 7px;
+	height: 7px;
+
+	border: 2px solid $color-d;
+	border-radius: 50%;
+	box-sizing: border-box;
+	background-color: white;
+
+	transition: width .25s, 
+							height .25s,
+							border-color .25s;
+}
+
+.icon {
+	width: 20px;
+	height: 20px;
+	fill: red;
+
+	transform: scale(0);
+
+	transition: transform .25s;
+	transition-delay: .3s;
+}
