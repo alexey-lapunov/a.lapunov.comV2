@@ -5,6 +5,7 @@ import { setLoadingPage as acSetLoadingPage } from 'store/app/actions';
 
 import { Home } from 'pages/Home';
 import { BaseLoader } from 'components/BaseLoader';
+import { CustomCursor } from 'components/CustomCursor';
 
 import styles from './App.module.scss';
 
@@ -16,6 +17,7 @@ const App = ({ isLoadingPage, setLoadingPage }) => {
   return (
     <div className={styles.block}>
       <BaseLoader isShow={isLoadingPage} />
+			<CustomCursor/>
 			<Home isShow={!isLoadingPage}/>
     </div>
   );

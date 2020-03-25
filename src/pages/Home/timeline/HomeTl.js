@@ -1,5 +1,4 @@
 import { TimelineMax as Timeline } from 'gsap';
-import { splitTextByWords } from 'utils/splitTextByWord';
 
 export const enterAnimation = node => {
 	const tl = new Timeline({ paused: true, delay: 1.7 });
@@ -27,40 +26,40 @@ export const enterAnimation = node => {
 		.from(logo, 0.4, {
 			scale: 0,
 			rotate: 360, 
-			ease: 'expo.inOut'
+			ease: 'SlowMo.ease'
 		}, 1.2)
 		.staggerFrom(navItems, 0.4, {
 			y: '-100%',
-			ease: 'expo.inOut'
+			ease: 'SlowMo.ease'
 		}, 0.025, 1.4)
 		.from(title, 0.4, {
 			y: '-100%',
 			opacity: 0,
-			ease: 'expo.inOut'
-		}, 1.8)
+			ease: 'SlowMo.ease'
+		}, 1.6)
 		.from(titleLine, 0.4, {
 			scaleY: 0,
-			ease: 'expo.inOut'
-		}, 2)
+			ease: 'SlowMo.ease'
+		}, 2.8)
 		.from(desc, 0.4, {
 			y: '-100%',
 			opacity: 0,
-			ease: 'expo.inOut'
-		}, 2.4)
+			ease: 'SlowMo.ease'
+		}, 2.0)
 		.from(descSquare, 0.4, {
 			scale: 0,
 			rotate: 360, 
-			ease: 'expo.inOut'
-		}, 2.6)
+			ease: 'SlowMo.ease'
+		}, 3.0)
 		.from(info, 0.4, {
 			y: '-100%',
 			opacity: 0,
-			ease: 'expo.inOut'
-		}, 3)
+			ease: 'SlowMo.ease'
+		}, 2.4)
 		.from(link, 0.4, {
 			x: '100%'	,
-			ease: 'expo.inOut'
-		}, 3)
+			ease: 'SlowMo.ease'
+		}, 2.6)
 		
 	tl.play();
 }
